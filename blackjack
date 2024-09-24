@@ -1,0 +1,197 @@
+# DO NOT CHANGE OR REMOVE THIS COMMENT, and do not change this import otherwise all tests will fail.
+from random import randint
+
+# Write all of your part 3 code below this comment. DO NOT CHANGE OR REMOVE THIS COMMENT.
+print("-----------")
+print("YOUR TURN")
+print("-----------")
+card = randint(1,13)
+hand_value = 0
+if card == 1:
+    hand_value += 11
+elif 2 <= card <= 10:
+    hand_value += card
+elif 11 <= card <= 13:
+    hand_value += 10
+
+if card == 1:
+    print("Drew an Ace")
+elif card == 11:
+    print("Drew a Jack")
+elif card == 12:
+    print("Drew a Queen")
+elif card == 13:
+    print("Drew a King")
+elif 2 <= card <= 10:
+    if card == 8:
+        print(f"Drew an {card}")
+    else:
+        print(f"Drew a {card}")
+
+card1 =  randint(1,13)
+if card1 == 1:
+    hand_value += 11
+elif 2 <= card1 <= 10:
+    hand_value += card1
+elif 11 <= card1 <= 13:
+    hand_value += 10
+if card1 == 1:
+    print("Drew an Ace")
+elif card1 == 11:
+    print("Drew a Jack")
+elif card1 == 12:
+    print("Drew a Queen")
+elif card1 == 13:
+    print("Drew a King")
+elif 2 <= card1 <= 10:
+    if card1 == 8:
+        print(f"Drew an {card1}")
+    else:
+        print(f"Drew a {card1}")
+
+card2 = 0
+while hand_value < 21:
+    new_answer = input(f"You have {hand_value}. Hit (y/n)? ").lower()
+    if new_answer == "n":
+        break
+    elif new_answer == "y":
+        card2 = randint(1,13)
+        if card2 == 1:
+            hand_value += 11
+        elif 2 <= card2 <= 10:
+            hand_value += card2
+        elif 11 <= card2 <= 13:
+            hand_value += 10
+
+        if card2 == 1:
+            print('Drew an Ace')
+        elif card2 == 11:
+            print("Drew a Jack")
+
+        elif card2 == 12:
+            print("Drew a Queen")
+
+        elif card2 == 13:
+            print("Drew a King")
+
+        elif 2 <= card2 <= 10:
+            if card2 == 8:
+                print(f"Drew an {card2}")
+            else:
+                print(f"Drew a {card2}")
+    else:
+        print("Sorry I didn't get that.")
+
+print(f"Final hand: {hand_value}.")
+if hand_value == 21:
+    print("BLACKJACK!")
+elif hand_value >= 22:
+    print("BUST.")
+elif hand_value < 4:
+    print("BAD HAND VALUE!")
+elif hand_value > 31:
+    print("BAD HAND VALUE!")
+
+print("-----------")
+print("DEALER TURN")
+print("-----------")
+card3 =  randint(1,13)
+hand_value_dealer = 0
+if card3 == 1:
+    hand_value_dealer += 11
+elif 2 <= card3 <= 10:
+    hand_value_dealer += card3
+elif 11 <= card3 <= 13:
+    hand_value_dealer = 10
+
+if card3 == 1:
+    print("Drew an Ace")
+elif card3 == 11:
+    print("Drew a Jack")
+elif card3 == 12:
+    print("Drew a Queen")
+elif card3 == 13:
+    print("Drew a King")
+elif 2 <= card3 <= 10:
+    if card3 == 8:
+        print(f"Drew an {card3}")
+    else:
+        print(f"Drew a {card3}")
+
+card4 = randint(1,13)
+if card4 == 1:
+    hand_value_dealer += 11
+elif 2 <= card4 <= 10:
+    hand_value_dealer += card4
+elif 11 <= card4 <= 13:
+    hand_value_dealer += 10
+if card4 == 1:
+    print("Drew an Ace")
+elif card4 == 11:
+    print("Drew a Jack")
+elif card4 == 12:
+    print("Drew a Queen")
+elif card4 == 13:
+    print("Drew a King")
+elif 2 <= card4 <= 10:
+    if card4 == 8:
+        print(f"Drew an {card4}")
+    else:
+        print(f"Drew a {card4}")
+if hand_value_dealer < 17:
+    print(f"Dealer has {hand_value_dealer}.")
+
+
+while hand_value_dealer < 17:
+    card5 =  randint(1,13)
+    if card5 == 1:
+        hand_value_dealer += 11
+    elif 2 <= card5 <= 10:
+        hand_value_dealer += card5
+    elif 11 <= card5 <= 13:
+        hand_value_dealer += 10
+
+    if card5 == 1:
+        print('Drew an Ace')
+    elif card5 == 11:
+        print("Drew a Jack")
+    elif card5 == 12:
+        print("Drew a Queen")
+    elif card5 == 13:
+        print("Drew a King")
+    elif 2 <= card5 <= 10:
+        if card5 == 8:
+            print(f"Drew an {card5}")
+        else:
+            print(f"Drew a {card5}")
+    if hand_value_dealer < 17:
+        print(f"Dealer has {hand_value_dealer}.")
+print(f"Final hand: {hand_value_dealer}.")
+if hand_value_dealer == 21:
+    print("BLACKJACK!")
+elif hand_value_dealer >= 22:
+    print("BUST.")
+elif hand_value_dealer == 31:
+    print("BUST.")
+elif hand_value_dealer < 4:
+    print("BAD HAND VALUE!")
+elif hand_value_dealer > 31:
+    print("BAD HAND VALUE!")
+
+print("-----------")
+print("GAME RESULT")
+print("-----------")
+if hand_value > hand_value_dealer and hand_value<=22:
+    print("You win!")
+elif hand_value_dealer>hand_value and hand_value_dealer<=22:
+    print("Dealer wins!")
+elif hand_value==hand_value_dealer:
+    print("Push.")
+elif hand_value_dealer>hand_value and hand_value>=22 and hand_value_dealer>=22:
+    print("You win!")
+elif hand_value>hand_value_dealer and hand_value>=22 and hand_value_dealer>=22:
+    print("Dealer wins!")
+elif hand_value>=22:
+    print("Dealer wins!")
+elif hand_value_dealer>=22:
+    print("You win!")
